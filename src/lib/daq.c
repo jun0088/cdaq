@@ -395,35 +395,10 @@ int data_copy(CC_Array *chs, void *data, int channel_size)
         if (ch->id == -1) {
             continue;
         }
-        // int channel_index = count;
-        // int sample_count = channel_size;
-        // uint32_t * data_start = (uint32_t*)data + channel_index*sample_count;
-        // endian_convert_simd((uint32_t *)ch->buffer,(uint32_t *)ch->buffer, sample_count);
-        // process_data_simd((uint32_t *)ch->buffer, sample_count, (ch->cal_enable==1? ch->gain_value:1), data_start);
-        // size_t copied_count = channel_size * sizeof(uint32_t);
-        // if(ch->read_count >= channel_size*sizeof(uint32_t)){
-        //     void *start = (void*)(ch->buffer + copied_count);
-        //     int size = ch->read_count - copied_count;
-        //     memcpy(ch->buffer, start, size);
-        //     ch->read_count = size;
-        // }
-        // channel_index += 1;
-        // count = channel_index;
 
-
-        // for (int i = 0; i < channel_size; i++) {
-        //     int index = i*4;
-        //     void *ptr = (void*)(ch->buffer + index);
-        //     float *data_ptr = (float*)data + count*channel_size + i;
-    
-        //     int tmp = (int)(convert_to_big_endian(ptr) + 1);
-        //     *(uint32_t*)ptr = tmp;
-        //     // *data_ptr = (float)(tmp)/0x7fffff * 4.096 * (ch->cal_enable==1? ch->gain_value:1);
-        // }
         endian_convert_simd((uint32_t *)ch->buffer,(uint32_t *)ch->buffer, channel_size);
         process_data_simd((uint32_t *)ch->buffer, channel_size, (ch->cal_enable==1? ch->gain_value:1), (float*)data + count*channel_size);
 
-        // printf("size uint32_t:%d\n", sizeof(uint32_t));
         size_t copied_count = channel_size * sizeof(uint32_t);
         if (ch->read_count >= copied_count) {
             void *start = (void*)(ch->buffer + copied_count);

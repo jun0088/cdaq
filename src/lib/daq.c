@@ -121,7 +121,7 @@ int board_init(const char *config)
     }
     
     conf_add(key, arr_ip); 
-    show_board(key);
+    // show_board(key);
     rc = board_isall(key);
     if (rc < 0) {
         printf("Error board isall: %d\n", rc);

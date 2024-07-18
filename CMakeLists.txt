@@ -10,7 +10,7 @@ include("build/generators/cmakedeps_macros.cmake")
 message("include ${CMAKE_INCLUDE_PATH}")
 
 find_package(ZeroMQ REQUIRED)
-find_package(ImGui REQUIRED)
+# find_package(ImGui REQUIRED)
 
 if(ZeroMQ_FOUND)
     include_directories(${ZeroMQ_INCLUDE_DIR})
@@ -23,13 +23,13 @@ include_directories(external/Collections-C/src/include)
 add_subdirectory(external/Collections-C)
 
 
-# add_executable(daq  src/main.c ${MY_SOURCES})
-add_executable(daq  src/lib/ui.cpp ${MY_SOURCES})
+add_executable(daq  src/main.c ${MY_SOURCES})
+# add_executable(daq  src/lib/ui.cpp ${MY_SOURCES})
 
 target_link_libraries(${PROJECT_NAME} collectc)
 message("linking to ${ZeroMQ_LIBRARIES}")
 target_link_libraries(${PROJECT_NAME} libzmq-static)
-target_link_libraries(${PROJECT_NAME} imgui::imgui)
+# target_link_libraries(${PROJECT_NAME} imgui::imgui)
 
 
 set(CMAKE_CXX_FLAGS "-m32")
@@ -40,7 +40,7 @@ add_library(libdaq SHARED
 )
 target_link_libraries(libdaq libzmq-static)
 target_link_libraries(libdaq collectc)
-target_link_libraries(libdaq imgui::imgui)
+# target_link_libraries(libdaq imgui::imgui)
 
 set_target_properties(libdaq
     PROPERTIES LINKER_LANGUAGE C

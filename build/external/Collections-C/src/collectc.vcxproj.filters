@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_deque.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_hashset.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_hashtable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_pqueue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_queue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_ring_buffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_slist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_stack.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_treeset.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_treetable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_tsttable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\memory\cc_dynamic_pool.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\memory\cc_static_pool.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\sized\cc_array_sized.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{21056F94-04D9-3A67-A18A-93BE6F523279}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

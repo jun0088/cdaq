@@ -1,0 +1,10 @@
+^C:\USERS\PRM\DESKTOP\CDAQ\BUILD\CMAKEFILES\62AF6199135A543A7B8295364D9FCC1B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/prm/Desktop/cdaq -BC:/Users/prm/Desktop/cdaq/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/prm/Desktop/cdaq/build/daq.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

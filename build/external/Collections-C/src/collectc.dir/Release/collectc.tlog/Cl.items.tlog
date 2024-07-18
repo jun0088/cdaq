@@ -1,0 +1,17 @@
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_array.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_array.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_common.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_common.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_deque.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_deque.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_hashset.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_hashset.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_hashtable.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_hashtable.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_list.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_list.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_pqueue.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_pqueue.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_queue.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_queue.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_ring_buffer.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_ring_buffer.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_slist.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_slist.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_stack.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_stack.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_treeset.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_treeset.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_treetable.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_treetable.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\cc_tsttable.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_tsttable.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\memory\cc_dynamic_pool.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_dynamic_pool.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\memory\cc_static_pool.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_static_pool.obj
+C:\Users\prm\Desktop\cdaq\external\Collections-C\src\sized\cc_array_sized.c;C:\Users\prm\Desktop\cdaq\build\external\Collections-C\src\collectc.dir\Release\cc_array_sized.obj

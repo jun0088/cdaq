@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{79CB0E05-0BE0-3E75-A472-A0D96CF9169A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\prm\.conan2\p\b\zerom9b1fd7508ac49\p\include;C:\Users\prm\Desktop\cdaq\src\lib;C:\Users\prm\Desktop\cdaq\external\Collections-C\src\include;C:\Users\prm\Desktop\cdaq\external\Collections-C\test\unit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\prm\.conan2\p\b\zerom9b1fd7508ac49\p\include;C:\Users\prm\Desktop\cdaq\src\lib;C:\Users\prm\Desktop\cdaq\external\Collections-C\src\include;C:\Users\prm\Desktop\cdaq\external\Collections-C\test\unit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\prm\.conan2\p\b\zerom9b1fd7508ac49\p\include;C:\Users\prm\Desktop\cdaq\src\lib;C:\Users\prm\Desktop\cdaq\external\Collections-C\src\include;C:\Users\prm\Desktop\cdaq\external\Collections-C\test\unit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\prm\.conan2\p\b\zerom9b1fd7508ac49\p\include;C:\Users\prm\Desktop\cdaq\src\lib;C:\Users\prm\Desktop\cdaq\external\Collections-C\src\include;C:\Users\prm\Desktop\cdaq\external\Collections-C\test\unit\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\prm\Desktop\cdaq\external\Collections-C\test\unit\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/prm/Desktop/cdaq/external/Collections-C/test/unit/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/prm/Desktop/cdaq -BC:/Users/prm/Desktop/cdaq/build --check-stamp-file C:/Users/prm/Desktop/cdaq/build/external/Collections-C/test/unit/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/prm/Desktop/cdaq/external/Collections-C/test/unit/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/prm/Desktop/cdaq -BC:/Users/prm/Desktop/cdaq/build --check-stamp-file C:/Users/prm/Desktop/cdaq/build/external/Collections-C/test/unit/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/prm/Desktop/cdaq/external/Collections-C/test/unit/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/prm/Desktop/cdaq -BC:/Users/prm/Desktop/cdaq/build --check-stamp-file C:/Users/prm/Desktop/cdaq/build/external/Collections-C/test/unit/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/prm/Desktop/cdaq/external/Collections-C/test/unit/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/prm/Desktop/cdaq -BC:/Users/prm/Desktop/cdaq/build --check-stamp-file C:/Users/prm/Desktop/cdaq/build/external/Collections-C/test/unit/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\ZERO_CHECK.vcxproj">
+      <Project>{DC98BFBE-0DED-313C-9CB3-F541BAD3CE96}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\array_sized_test.vcxproj">
+      <Project>{A330BB43-D68E-3388-AE34-E6D6BAAD9E54}</Project>
+      <Name>array_sized_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\array_test.vcxproj">
+      <Project>{3B77DB7E-913F-340C-A373-84052CA327E6}</Project>
+      <Name>array_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\deque_test.vcxproj">
+      <Project>{14C7CC4B-2D2B-3837-8940-294C11EE34AC}</Project>
+      <Name>deque_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\dynamic_pool_test.vcxproj">
+      <Project>{1FD71448-2450-38FB-834C-2C2E53B8F97C}</Project>
+      <Name>dynamic_pool_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\hashset_test.vcxproj">
+      <Project>{51B979F2-48EB-3132-8C00-3708CBFDF2F7}</Project>
+      <Name>hashset_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\hashtable_test.vcxproj">
+      <Project>{E156E0F8-5B9A-3A36-B5EA-58254267BFDD}</Project>
+      <Name>hashtable_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\list_test.vcxproj">
+      <Project>{A5D695FC-6F14-3CA1-9693-E78934F6661A}</Project>
+      <Name>list_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\pqueue_test.vcxproj">
+      <Project>{F129E7FF-8743-3740-9310-437CDCF80728}</Project>
+      <Name>pqueue_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\queue_test.vcxproj">
+      <Project>{66B18804-FE0B-30A0-B331-6543459A8D8B}</Project>
+      <Name>queue_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\rbuf_test.vcxproj">
+      <Project>{E77920ED-571C-3EBB-B632-882D9B140B02}</Project>
+      <Name>rbuf_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\slist_test.vcxproj">
+      <Project>{81FA1DFB-8D0E-35E7-BAB7-7AC1D99E9401}</Project>
+      <Name>slist_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\stack_test.vcxproj">
+      <Project>{A6172A34-C2C9-30AC-9B74-386BDE29969B}</Project>
+      <Name>stack_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\static_pool_test.vcxproj">
+      <Project>{569579F4-8BCE-36D5-A620-11C485F983A3}</Project>
+      <Name>static_pool_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\treeset_test.vcxproj">
+      <Project>{ECCE5AE3-FA1A-3A45-BC94-79B167448D49}</Project>
+      <Name>treeset_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\treetable_test.vcxproj">
+      <Project>{A572D340-DCE1-304E-A0B4-E48E99C5C548}</Project>
+      <Name>treetable_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\prm\Desktop\cdaq\build\external\Collections-C\test\unit\tsttable_test.vcxproj">
+      <Project>{CE4BB6B6-BCAA-3066-B859-EFEE242D3D72}</Project>
+      <Name>tsttable_test</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

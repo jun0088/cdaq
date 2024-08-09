@@ -1,2 +1,4 @@
-C:\Users\prm\Desktop\cdaq\src\main.c;C:\Users\prm\Desktop\cdaq\build\daq.dir\Release\main.obj
+C:\Users\prm\Desktop\cdaq\src\lib\ui.cpp;C:\Users\prm\Desktop\cdaq\build\daq.dir\Release\ui.obj
 C:\Users\prm\Desktop\cdaq\src\lib\daq.c;C:\Users\prm\Desktop\cdaq\build\daq.dir\Release\daq.obj
+C:\Users\prm\Desktop\cdaq\src\lib\imgui_impl_dx11.cpp;C:\Users\prm\Desktop\cdaq\build\daq.dir\Release\imgui_impl_dx11.obj
+C:\Users\prm\Desktop\cdaq\src\lib\imgui_impl_win32.cpp;C:\Users\prm\Desktop\cdaq\build\daq.dir\Release\imgui_impl_win32.obj

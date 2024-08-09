@@ -41,6 +41,8 @@
         "system_error": "c",
         "type_traits": "c",
         "xiosbase": "c",
-        "xlocbuf": "c"
+        "xlocbuf": "c",
+        "iostream": "cpp",
+        "stdint.h": "c"
     }
 }

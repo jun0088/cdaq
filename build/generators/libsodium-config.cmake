@@ -31,7 +31,8 @@ set(libsodium_INCLUDE_DIR ${libsodium_INCLUDE_DIRS_RELEASE} )
 set(libsodium_LIBRARIES ${libsodium_LIBRARIES_RELEASE} )
 set(libsodium_DEFINITIONS ${libsodium_DEFINITIONS_RELEASE} )
 
-# Only the first installed configuration is included to avoid the collision
+
+# Only the last installed configuration BUILD_MODULES are included to avoid the collision
 foreach(_BUILD_MODULE ${libsodium_BUILD_MODULES_PATHS_RELEASE} )
     message(${libsodium_MESSAGE_MODE} "Conan: Including build module from '${_BUILD_MODULE}'")
     include(${_BUILD_MODULE})

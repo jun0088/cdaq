@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "zmq.h": "c",
-        "stream.h": "c"
-    }
-}

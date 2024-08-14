@@ -31,7 +31,8 @@ set(ZeroMQ_INCLUDE_DIR ${zeromq_INCLUDE_DIRS_RELEASE} )
 set(ZeroMQ_LIBRARIES ${zeromq_LIBRARIES_RELEASE} )
 set(ZeroMQ_DEFINITIONS ${zeromq_DEFINITIONS_RELEASE} )
 
-# Only the first installed configuration is included to avoid the collision
+
+# Only the last installed configuration BUILD_MODULES are included to avoid the collision
 foreach(_BUILD_MODULE ${zeromq_BUILD_MODULES_PATHS_RELEASE} )
     message(${ZeroMQ_MESSAGE_MODE} "Conan: Including build module from '${_BUILD_MODULE}'")
     include(${_BUILD_MODULE})

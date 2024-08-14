@@ -22,10 +22,10 @@
                 "strategy": "external"
             },
             "architecture": {
-                "value": "Win32",
+                "value": "x64",
                 "strategy": "external"
             },
-            "toolchainFile": "C:\\Users\\prm\\Desktop\\cdaq\\build\\generators\\conan_toolchain.cmake",
+            "toolchainFile": "generators\\conan_toolchain.cmake",
             "binaryDir": "C:\\Users\\prm\\Desktop\\cdaq\\build"
         }
     ],

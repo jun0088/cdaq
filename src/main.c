@@ -70,8 +70,8 @@ int main() {
         return -1;
     }
     // printf("key:%d\n", key);
-    show_conf();    
-    show_board(key);
+    // show_conf();    
+    // show_board(key);
 
     int channel_count = get_channel_count(key);
     printf("channel_count:%d\n", channel_count);

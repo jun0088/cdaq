@@ -1227,7 +1227,7 @@ int board_gain_read(Channel *ch_ctrl, Channel *ch)
         printf("Error board gain read count\n");
         return -2;
     }
-    printf("board gain read: %d %f\n", id, gain_value);
+    // printf("board gain read: %d %f\n", id, gain_value);
     ch->gain_value = gain_value;
     return 0;   
 }
@@ -1371,7 +1371,7 @@ int show_board(const int key)
         printf("Error key get arr_ip:%d\n", key);
         return -1;
     }
-    int c = 168;
+    int c = 150;
     for (int i = 0; i < c; i++) {
         printf("-");
         if (i == c/2) {

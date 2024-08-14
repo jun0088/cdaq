@@ -3,12 +3,17 @@
 // Read online: https://github.com/ocornut/imgui/tree/master/docs
 #include <stdio.h>
 #include <math.h> 
-#include "ui.h"
+#include "daq_ui.h"
 #include "imgui.h"
 #include "imgui_impl_win32.h"
 #include "imgui_impl_dx11.h"
 #include <d3d11.h>
 #include <tchar.h>
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <sstream>
 
 // Data
 static ID3D11Device*            g_pd3dDevice = NULL;
@@ -49,12 +54,10 @@ int main(int, char**)
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
-    //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-    //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
     // Setup Dear ImGui style
     ImGui::StyleColorsDark();
-    //ImGui::StyleColorsLight();
+
 
     // Setup Platform/Renderer backends
     ImGui_ImplWin32_Init(hwnd);
@@ -62,7 +65,6 @@ int main(int, char**)
 
     // Our state
     bool show_demo_window = true;
-    bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
     // Main loop
@@ -88,128 +90,138 @@ int main(int, char**)
         ImGui::NewFrame();
 
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
-        if (show_demo_window)
-            ImGui::ShowDemoWindow(&show_demo_window);
+        
+        ImGui::ShowDemoWindow(&show_demo_window);
 
-        // 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
-        {
-            static float f = 0.0f;
-            static int counter = 0;
-
-            ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-            ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-            ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
-            ImGui::Checkbox("Another Window", &show_another_window);
-
-            ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-            ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
-            if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-                counter++;
-            ImGui::SameLine();
-            ImGui::Text("counter = %d", counter);
-
-            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-            ImGui::End();
-        }
-
-        // 3. Show another simple window.
-        if (show_another_window)
-        {
-            ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-            ImGui::Text("Hello from another window!");
-            if (ImGui::Button("Close Me"))
-                show_another_window = false;
-            ImGui::End();
-        }
-
-        // 4. daq
+        // 3. daq graph
         {
             ImGui::Begin("DAQ");
-            ImGui::Text("Hello from daq!");
+
             // IMGUI_DEMO_MARKER("Widgets/Plotting");
             // if (ImGui::CollapsingHeader("Plotting")){
-            static bool animate = true;
-            ImGui::Checkbox("Animate", &animate);
+            // static bool animate = true;
+            // ImGui::Checkbox("Animate", &animate);
 
-            // Plot as lines and plot as histogram
-            // IMGUI_DEMO_MARKER("Widgets/Plotting/PlotLines, PlotHistogram");
-            // static float arr[] = { 0.6f, 0.1f, 1.0f, 0.5f, 0.92f, 0.1f, 0.2f };
-            // ImGui::PlotLines("Frame Times", arr, IM_ARRAYSIZE(arr));
-            // ImGui::PlotHistogram("Histogram", arr, IM_ARRAYSIZE(arr), 0, NULL, 0.0f, 1.0f, ImVec2(0, 80.0f));
-
-            // Fill an array of contiguous float values to plot
-            // Tip: If your float aren't contiguous but part of a structure, you can pass a pointer to your first float
-            // and the sizeof() of your structure in the "stride" parameter.
-            static float values[90] = {};
-            static int values_offset = 0;
-            static double refresh_time = 0.0;
-            if (!animate || refresh_time == 0.0)
-                refresh_time = ImGui::GetTime();
-            while (refresh_time < ImGui::GetTime()) // Create data at fixed 60 Hz rate for the demo
-            {
-                static float phase = 0.0f;
-                values[values_offset] = cosf(phase);
-                values_offset = (values_offset + 1) % IM_ARRAYSIZE(values);
-                phase += 0.10f * values_offset;
-                refresh_time += 1.0f / 60.0f;
-            }
+            // static float values[90] = {};
+            // static int values_offset = 0;
+            // static double refresh_time = 0.0;
+            // if (!animate || refresh_time == 0.0)
+            //     refresh_time = ImGui::GetTime();
+            // while (refresh_time < ImGui::GetTime()) // Create data at fixed 60 Hz rate for the demo
+            // {
+            //     static float phase = 0.0f;
+            //     values[values_offset] = cosf(phase);
+            //     values_offset = (values_offset + 1) % IM_ARRAYSIZE(values);
+            //     phase += 0.10f * values_offset;
+            //     refresh_time += 1.0f / 60.0f;
+            // }
 
             // Plots can display overlay texts
             // (in this example, we will display an average value)
             {
-                float average = 0.0f;
-                for (int n = 0; n < IM_ARRAYSIZE(values); n++)
-                    average += values[n];
-                average /= (float)IM_ARRAYSIZE(values);
-                char overlay[32];
-                sprintf(overlay, "avg %f", average);
-                ImGui::PlotLines("daq", values, IM_ARRAYSIZE(values), values_offset, overlay, -5.0f, 5.0f, ImVec2(800, 600.0f));
+                // float average = 0.0f;
+                // for (int n = 0; n < IM_ARRAYSIZE(values); n++)
+                //     average += values[n];
+                // average /= (float)IM_ARRAYSIZE(values);
+                // char overlay[32];
+                // sprintf(overlay, "avg %f", average);
+                std::ifstream file("output.txt");
+                if (!file.is_open()) {
+                    std::cerr << "Failed to open file." << std::endl;
+                    return 1;
+                }
+
+                std::vector<float> floatArray;
+                std::string line;
+                while (std::getline(file, line)) {
+                    std::istringstream iss(line);
+                    float num;
+                    while (iss >> num) {
+                        floatArray.push_back(num);
+                    }
+                }
+                file.close();
+
+                // 将vector转换为数组
+                float* floatArrayPtr = new float[floatArray.size()];
+                for (size_t i = 0; i < floatArray.size(); ++i) {
+                    floatArrayPtr[i] = floatArray[i];
+                }
+
+                // 输出读取到的浮点数
+                // for (size_t i = 0; i < floatArray.size(); ++i) {
+                //     std::cout << floatArrayPtr[i] << " ";
+                // }
+                // std::cout << std::endl;
+
+                // 释放内存
+                // delete[] floatArrayPtr;
+                ImGui::PlotLines("daq", floatArrayPtr, floatArray.size(), 0, NULL, -0.005f, 0.005f, ImVec2(800, 600.0f));
+                delete[] floatArrayPtr;
             }
 
-            // Use functions to generate output
-            // FIXME: This is rather awkward because current plot API only pass in indices.
-            // We probably want an API passing floats and user provide sample rate/count.
-            // struct Funcs
-            // {
-            //     static float Sin(void*, int i) { return sinf(i * 0.1f); }
-            //     static float Saw(void*, int i) { return (i & 1) ? 1.0f : -1.0f; }
-            // };
-            // static int func_type = 0, display_count = 70;
-            // ImGui::Separator();
-            // ImGui::SetNextItemWidth(ImGui::GetFontSize() * 8);
-            // ImGui::Combo("func", &func_type, "Sin\0Saw\0");
-            // ImGui::SameLine();
-            // ImGui::SliderInt("Sample count", &display_count, 1, 400);
-            // float (*func)(void*, int) = (func_type == 0) ? Funcs::Sin : Funcs::Saw;
-            // ImGui::PlotLines("Lines", func, NULL, display_count, 0, NULL, -1.0f, 1.0f, ImVec2(0, 80));
-            // ImGui::PlotHistogram("Histogram", func, NULL, display_count, 0, NULL, -1.0f, 1.0f, ImVec2(0, 80));
-            // ImGui::Separator();
-
-            // // Animate a simple progress bar
-            // // IMGUI_DEMO_MARKER("Widgets/Plotting/ProgressBar");
-            // static float progress = 0.0f, progress_dir = 1.0f;
-            // if (animate)
-            // {
-            //     progress += progress_dir * 0.4f * ImGui::GetIO().DeltaTime;
-            //     if (progress >= +1.1f) { progress = +1.1f; progress_dir *= -1.0f; }
-            //     if (progress <= -0.1f) { progress = -0.1f; progress_dir *= -1.0f; }
-            // }
-
-            // // Typically we would use ImVec2(-1.0f,0.0f) or ImVec2(-FLT_MIN,0.0f) to use all available width,
-            // // or ImVec2(width,0.0f) for a specified width. ImVec2(0.0f,0.0f) uses ItemWidth.
-            // ImGui::ProgressBar(progress, ImVec2(0.0f, 0.0f));
-            // ImGui::SameLine(0.0f, ImGui::GetStyle().ItemInnerSpacing.x);
-            // ImGui::Text("Progress Bar");
-
-            // float progress_saturated = IM_CLAMP(progress, 0.0f, 1.0f);
-            // char buf[32];
-            // sprintf(buf, "%d/%d", (int)(progress_saturated * 1753), 1753);
-            // ImGui::ProgressBar(progress, ImVec2(0.f, 0.f), buf);
-            // ImGui::TreePop();
-            // }
             ImGui::End();
+        }
+        static Board board;
+        // board_init(&board);
+        static bool trig = false;
+        {
+            ImGui::Begin("Config"); 
+            if (ImGui::TreeNode("Board")) {
+                ImGui::Checkbox("trig", &trig);
+                static ImGuiTableFlags flags1 = ImGuiTableFlags_BordersV;
+                ImGui::BeginTable("board", 6, flags1);
+                ImGui::TableSetupColumn("Channel");
+                ImGui::TableSetupColumn("ctrl(1)");
+                ImGui::TableSetupColumn("gain(2)");
+                ImGui::TableSetupColumn("iepe(3)");
+                ImGui::TableSetupColumn("coupling(4)");
+                ImGui::TableSetupColumn("cal(5)");
+                ImGui::TableHeadersRow();
+                for (int row = 0; row < 7; row++) {
+                    ImGui::TableNextRow();
+                    for (int column = 0; column < 8; column++) {
+                        ImGui::TableSetColumnIndex(column);
+                        if (column == 0) {
+                            if (row == 0) {      
+                                ImGui::Text("All");
+                            } else {
+                                ImGui::Text("Ch%d", row);                                
+                            }
+                        } else {
+                            bool *tmp = NULL;
+                            if (column == CTRL) {
+                                tmp = &(board.chs[row].ctrl);
+                            } else if (column == GAIN) {
+                                tmp = &(board.chs[row].gain);
+                            } else if (column == IEPE) {
+                                tmp = &(board.chs[row].iepe);
+                            } else if (column == COUPLING) {
+                                tmp = &(board.chs[row].coupling);
+                            } else if (column == CALENABLE) {
+                                tmp = &(board.chs[row].calenable);
+                            }
+                            char str[10] = {0};
+                            sprintf(str, "%d,%d", row, column);
+                            ImGui::Checkbox(str, tmp);
+                            // ImGui::Button("push", ImVec2(-FLT_MIN, 0.0f));
+                            // if (data[row][column-1]) {
+                            //     ImGui::SameLine();
+                            //     ImGui::Text("ON");
+                            // } else {
+                            //     ImGui::SameLine();
+                            //     ImGui::Text("OFF");
+                            // }
+                        }
+
+                    }
+                }
+                ImGui::EndTable();
+                
+            }
+
+
+            ImGui::End();                        // Create a window called "Hello, world!" and append into it.
         }
 
         // Rendering

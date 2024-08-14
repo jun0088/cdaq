@@ -43,6 +43,8 @@
         "xiosbase": "c",
         "xlocbuf": "c",
         "iostream": "cpp",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "math.h": "c",
+        "iosfwd": "cpp"
     }
 }

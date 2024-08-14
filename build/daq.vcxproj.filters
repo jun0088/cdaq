@@ -7,6 +7,9 @@
     <ClCompile Include="C:\Users\prm\Desktop\cdaq\src\lib\daq.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\prm\Desktop\cdaq\src\lib\daq_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\prm\Desktop\cdaq\src\lib\imgui_impl_dx11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -21,13 +24,13 @@
     <ClInclude Include="C:\Users\prm\Desktop\cdaq\src\lib\daq.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\Users\prm\Desktop\cdaq\src\lib\daq_ui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\prm\Desktop\cdaq\src\lib\imgui_impl_dx11.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\prm\Desktop\cdaq\src\lib\imgui_impl_win32.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\prm\Desktop\cdaq\src\lib\ui.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

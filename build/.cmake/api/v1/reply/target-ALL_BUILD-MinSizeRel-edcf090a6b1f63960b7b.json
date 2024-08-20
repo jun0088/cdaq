@@ -1,0 +1,57 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"external/Collections-C/examples/hashtable/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "string_keys::@83b3c8fe0c7a83c82968"
+		},
+		{
+			"id" : "custom_key_types::@83b3c8fe0c7a83c82968"
+		},
+		{
+			"id" : "pointer_keys::@83b3c8fe0c7a83c82968"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "removing_key_value_pairs::@83b3c8fe0c7a83c82968"
+		},
+		{
+			"id" : "adding_key_value_pairs::@83b3c8fe0c7a83c82968"
+		},
+		{
+			"id" : "getting_info_about_the_table_and_pairs::@83b3c8fe0c7a83c82968"
+		},
+		{
+			"id" : "iterating_over_pairs::@83b3c8fe0c7a83c82968"
+		},
+		{
+			"id" : "configuration::@83b3c8fe0c7a83c82968"
+		}
+	],
+	"id" : "ALL_BUILD::@83b3c8fe0c7a83c82968",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "external/Collections-C/examples/hashtable",
+		"source" : "external/Collections-C/examples/hashtable"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

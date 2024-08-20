@@ -100,13 +100,13 @@ int main() {
     int channel_size = 1000;
     int data_size = channel_size * channel_count;
     float *data = (float *)calloc(sizeof(float),data_size);
-    // rc = read(key, data, data_size, channel_size);
-    // if (rc < 0) {
-    //     printf("Error %d read failed\n", rc);
-    //     return -1;
-    // }
-    // printf("read success!\n");
-    loop_read(key, data, data_size, channel_size);
+    rc = read(key, data, data_size, channel_size);
+    if (rc < 0) {
+        printf("Error %d read failed\n", rc);
+        return -1;
+    }
+    printf("read success!\n");
+    // loop_read(key, data, data_size, channel_size);
 
     FILE *fp2 = fopen("read_data.txt", "w");
     if (fp2 == NULL) {
@@ -129,5 +129,6 @@ int main() {
     rst();
 
     printf("done!\n");
+    system("pause");
     return 0;
 }

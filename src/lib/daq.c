@@ -9,7 +9,7 @@
 #include "cc_array.h"
 #include "cc_hashtable.h"
 #include "calibrate.h"
-
+int static _lock = 0;
 
 void *context = NULL;
 /*
@@ -108,8 +108,22 @@ int rst()
 // return hash key
 int board_init(const char *config)
 {
-    WaitForSingleObject(hMutex,INFINITE);
+    // int static _lock = 0;
     int rc = 0;
+    if (_lock == 0) {
+        while (!InterlockedCompareExchange(&_lock, 1, 0)){
+            Sleep(1000);
+        }
+        rc = init();
+        // check init lock and resource
+        // if not init, init lock and resouce
+        InterlockedCompareExchange(&_lock,0,1);
+        if (rc != 0) {
+            return -8;
+        }
+    }
+    WaitForSingleObject(hMutex,INFINITE);
+    // int rc = 0;
     int key = hash_config(config);
     // printf("key:%d\n", key);
     CC_Array *arr_ip;
@@ -159,6 +173,9 @@ int board_init(const char *config)
 
 int board_free(const int key)
 {
+
+    // int static _lock = 0;
+
     WaitForSingleObject(hMutex,INFINITE);
     CC_Array *arr_ip;
     if (cc_hashtable_get(conf, &key, &arr_ip) != CC_OK){
@@ -199,6 +216,19 @@ int board_free(const int key)
         }
     });
     ReleaseMutex(hMutex);
+    int rc = 0;
+    if (_lock == 0) {
+        while (!InterlockedCompareExchange(&_lock, 1, 0)){
+            Sleep(1000);
+        }
+        rc = rst();
+        // check init lock and resource
+        // if not init, init lock and resouce
+        InterlockedCompareExchange(&_lock,0,1);
+        if(rc != 0){
+            return -2;
+        }
+    }
     return 0;
 }
 

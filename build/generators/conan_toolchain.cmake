@@ -18,7 +18,7 @@ endif()
 # Definition of system, platform and toolset
 
 
-set(CMAKE_GENERATOR_PLATFORM "x64" CACHE STRING "" FORCE)
+set(CMAKE_GENERATOR_PLATFORM "Win32" CACHE STRING "" FORCE)
 
 message(STATUS "Conan toolchain: CMAKE_GENERATOR_TOOLSET=v143")
 set(CMAKE_GENERATOR_TOOLSET "v143" CACHE STRING "" FORCE)
@@ -50,7 +50,7 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "$<$<CONFIG:Release>:MultiThreadedDLL>")
 # Definition of CMAKE_VS_DEBUGGER_ENVIRONMENT from "bindirs" folders of dependencies
 # for execution of applications with shared libraries within the VS IDE
 
-set(CMAKE_VS_DEBUGGER_ENVIRONMENT "PATH=$<$<CONFIG:Release>:C:/Users/prm/.conan2/p/zeromec2ecc4e3be71/p/bin;C:/Users/prm/.conan2/p/libsod7e5db4c9d86c/p/bin;C:/Users/prm/.conan2/p/imgui1895edcc2db9a/p/bin>;%PATH%")
+set(CMAKE_VS_DEBUGGER_ENVIRONMENT "PATH=$<$<CONFIG:Release>:C:/Users/prm/.conan2/p/b/zeromca4fb2f0b1eb0/p/bin;C:/Users/prm/.conan2/p/b/libsob47f82415a749/p/bin;C:/Users/prm/.conan2/p/b/imgui628d26928e581/p/bin>;%PATH%")
 
 
 ########## 'cppstd' block #############
@@ -137,9 +137,9 @@ list(PREPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR})
 # Definition of CMAKE_PREFIX_PATH, CMAKE_XXXXX_PATH
 # The Conan local "generators" folder, where this toolchain is saved.
 list(PREPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_LIST_DIR} )
-list(PREPEND CMAKE_LIBRARY_PATH "C:/Users/prm/.conan2/p/zeromec2ecc4e3be71/p/lib" "C:/Users/prm/.conan2/p/libsod7e5db4c9d86c/p/lib" "C:/Users/prm/.conan2/p/imgui1895edcc2db9a/p/lib")
-list(PREPEND CMAKE_INCLUDE_PATH "C:/Users/prm/.conan2/p/zeromec2ecc4e3be71/p/include" "C:/Users/prm/.conan2/p/libsod7e5db4c9d86c/p/include" "C:/Users/prm/.conan2/p/imgui1895edcc2db9a/p/include")
-set(CONAN_RUNTIME_LIB_DIRS "$<$<CONFIG:Release>:C:/Users/prm/.conan2/p/zeromec2ecc4e3be71/p/bin>" "$<$<CONFIG:Release>:C:/Users/prm/.conan2/p/libsod7e5db4c9d86c/p/bin>" "$<$<CONFIG:Release>:C:/Users/prm/.conan2/p/imgui1895edcc2db9a/p/bin>" )
+list(PREPEND CMAKE_LIBRARY_PATH "C:/Users/prm/.conan2/p/b/zeromca4fb2f0b1eb0/p/lib" "C:/Users/prm/.conan2/p/b/libsob47f82415a749/p/lib" "C:/Users/prm/.conan2/p/b/imgui628d26928e581/p/lib")
+list(PREPEND CMAKE_INCLUDE_PATH "C:/Users/prm/.conan2/p/b/zeromca4fb2f0b1eb0/p/include" "C:/Users/prm/.conan2/p/b/libsob47f82415a749/p/include" "C:/Users/prm/.conan2/p/b/imgui628d26928e581/p/include")
+set(CONAN_RUNTIME_LIB_DIRS "$<$<CONFIG:Release>:C:/Users/prm/.conan2/p/b/zeromca4fb2f0b1eb0/p/bin>" "$<$<CONFIG:Release>:C:/Users/prm/.conan2/p/b/libsob47f82415a749/p/bin>" "$<$<CONFIG:Release>:C:/Users/prm/.conan2/p/b/imgui628d26928e581/p/bin>" )
 
 
 

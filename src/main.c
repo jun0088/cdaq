@@ -63,7 +63,7 @@ int main() {
     fclose(fp);
 
     // char* buf = "192.168.0.159/ai0?ctrl=1&gain=1&iepe=1&coupling=1\n";
-    init();
+    // init();
     int key = board_init(buf);
     if (key < 0) {
         printf("Error %d board_init failed\n", key);
@@ -126,7 +126,7 @@ int main() {
         return -1;
     }
     printf("board_free success!\n");
-    rst();
+    // rst();
 
     printf("done!\n");
     system("pause");

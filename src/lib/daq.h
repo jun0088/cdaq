@@ -37,10 +37,10 @@ typedef struct Channel {
     float gain_value;
 };
 
-extern __declspec(dllexport) int open_exe(char *file);
-extern __declspec(dllexport) int lock();
-extern __declspec(dllexport) int init();
-extern __declspec(dllexport) int rst();
+// extern __declspec(dllexport) int open_exe(char *file);
+// extern __declspec(dllexport) int lock();
+// extern __declspec(dllexport) int init();
+// extern __declspec(dllexport) int rst();
 extern __declspec(dllexport) int board_init(const char *config); // return is key
 extern __declspec(dllexport) int board_free(int key);
 extern __declspec(dllexport) int get_channel_count(int key);

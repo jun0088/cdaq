@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\prm\Desktop\cdaq\build\x64\Release\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\prm\Desktop\cdaq\build\Release\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
       <FullPath>C:\Users\prm\Desktop\cdaq\build\Release\daq.exe</FullPath>

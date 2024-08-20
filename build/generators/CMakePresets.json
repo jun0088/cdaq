@@ -22,7 +22,7 @@
                 "strategy": "external"
             },
             "architecture": {
-                "value": "x64",
+                "value": "Win32",
                 "strategy": "external"
             },
             "toolchainFile": "generators\\conan_toolchain.cmake",
